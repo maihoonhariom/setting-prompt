@@ -1,0 +1,184 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body, html{
+    height: 100%;
+    width: 100%;
+
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    height: 80%;
+    width: 20%;
+    background-color: red;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box::before{
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: 10%;
+    height: 120%;
+    width: 80%;
+    background-color: white;
+    animation: rotate 5s linear infinite;
+    
+}
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.content{
+    color: aliceblue;
+    position: absolute;
+    height: 96%;
+    width: 96%;
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.content>.nav{
+    display: flex;
+    justify-content: flex-start;
+    gap: 3%;
+
+    font-family: sans-serif;
+    margin-top: 5px;
+}
+.content>.nav>i{
+    font-size: 15px;
+}
+.content>.nav>h3{
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.content>p:nth-child(2){
+    font-family: sans-serif;
+    font-weight: 100;
+    color: rgb(123, 113, 113);
+    font-size: 12px;
+
+    margin-top: 15%;
+}
+
+.content>div:nth-child(3){
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    font-family: sans-serif;
+    font-size: 13px;
+}
+
+.switch{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 20px;
+
+    font-family: sans-serif;
+    font-size: 13px;
+    
+}
+
+.switch>div{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.button{
+    
+    width: 30px;
+
+    position: relative;
+}
+.button input{
+    display: none;
+}
+.button .labe{
+    width: 30px;
+    height: 15px;
+    background-color: rgb(166, 163, 163);
+    position: absolute;
+    border-radius: 50px;
+    transition: 0.50s;
+}
+
+.button .labe::before{
+    content: "";
+    width: 40%;
+    height: 90%;
+    background-color: black;
+    position: absolute;
+    border-radius: 50%;
+    
+    top: 5%;
+    left: 1%;
+    transition: 0.50s;
+}
+
+.button input:checked + label{
+    background-color: #0841bb;
+    transition: 0.50s;
+}
+.button input:checked + label::before{
+    content: "";
+    transform: translateX(130%);
+    transition: all 0.25s;
+    background-color: white;
+}
+
+.status-bar{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: sans-serif;
+    font-size: 13px;
+}
+.status{
+    font-family: sans-serif;
+    font-weight: 100;
+    color: rgb(123, 113, 113);
+    font-size: 12px;
+
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+.status-bar>div{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.status-bar>div>div{
+    display: flex;
+    
+}
+.status-bar>div>div>p{
+    font-family: sans-serif;
+    font-weight: 100;
+    color: rgb(123, 113, 113);
+    font-size: 12px; 
+    text-align: end;
+}
+.status-bar>div:nth-child(2)>p{
+    width: 60%;
+}
